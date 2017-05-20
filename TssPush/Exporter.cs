@@ -1,5 +1,6 @@
 ﻿using System;
 using System.IO;
+using System.Linq;
 using TssPush.Models;
 using TssPush.Utils;
 
@@ -11,9 +12,12 @@ namespace TssPush
         private const string RNC = "1-01-00991-8";
         private const string ROW_TYPE_HEADER = "E";
         private const string ROW_TYPE_FOOTER = "S";
+
+        private static TssDb db = new TssDb();
+
         public static void ExportTSSFile(string path)
         {
-            var employees = DataMock.GetMockEmployees();
+            var employees = db.Employees.ToList();
             var numberOfRows = 0;
             using (var writer = new StreamWriter(path + "/TSS.dat", false))
             {

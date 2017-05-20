@@ -15,6 +15,8 @@ namespace TssPush
         {
             var path = FolderPathInput.Text;
             Exporter.ExportTSSFile(path);
+            MessageBox.Show("Documento generado satisfactoriamente en \"" + 
+                path + "/TSS.dat\"");
         }
 
         private void BrowseBtn_Click(object sender, EventArgs e)
