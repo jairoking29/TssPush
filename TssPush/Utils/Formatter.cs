@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace TssPush.Utils
 {
@@ -29,6 +25,11 @@ namespace TssPush.Utils
         public static string FormatNumber(decimal number, int lenght)
         {
             return number.ToString("0.00").Replace(".", "").PadLeft(lenght, '0');
+        }
+
+        public static string FormatNumber(int number, int lenght)
+        {
+            return number.ToString().PadLeft(lenght, '0');
         }
     }
 }
